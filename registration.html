@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pendaftaran Akun</title>
+  <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/registration.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Form Pendaftaran Akun</h2>
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan alamat email" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Pilih username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Pilih password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <div class="register">
+      <p>Silahkan <a href="login.html">Login</a></p>
+    </div>    
+  </div>
+  <script>
+    document.getElementById("registration-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Menghentikan aksi default pengiriman form
+
+      // Lakukan validasi form
+      if (validateForm()) {
+        // Lakukan proses pendaftaran di sini
+
+        // Tampilkan alert popup setelah proses pendaftaran selesai
+        alert("Pendaftaran berhasil!");
+
+        // Reset form ke kondisi awal jika diperlukan
+        document.getElementById("registration-form").reset();
+      }
+    });
+
+    // Fungsi untuk validasi form
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Periksa apakah ada input yang kosong
+      if (name === "" || email === "" || username === "" || password === "") {
+        alert("Mohon lengkapi semua field pada form!");
+        return false; // Menghentikan pengiriman form
+      }
+
+      return true; // Form valid, lanjutkan pengiriman form
+    }
+
+    // Tambahkan event listener untuk teks "Silahkan login"
+    document.getElementById("login-text").addEventListener("click", function() {
+      // Arahkan ke halaman login
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

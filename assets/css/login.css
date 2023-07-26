@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #910000, #00005f, #000000);
+    margin: 0;
+    padding: 0;
+    background-size: 400% auto;
+  animation: gradientAnimation 12s linear infinite;
+  }
+
+  @keyframes gradientAnimation {
+  0% { background-position: 0% }
+  100% { background-position: 100% }
+}
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .login-form {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.404);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%; /* Menengahkan kontainer secara horizontal */
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .login-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 97%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-group button {
+    width: 101%;
+    padding: 8px;
+    background-color: #0bb610;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-group button:hover {
+    background-color: #c97800;
+  }
+
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .login-form {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  
